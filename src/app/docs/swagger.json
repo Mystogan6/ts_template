@@ -1,0 +1,94 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Swagger doc for ....",
+    "description": "",
+    "contact": {
+      "name": "Corentinc"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": ""
+    }
+  ],
+  "tags": [
+    {
+      "name": "ts_template",
+      "description": "",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": ""
+      }
+    },
+    {
+      "name": "Health",
+      "description": "Everything about health check"
+    }
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "description": "This method is use to retrieve check if the app is alive",
+        "operationId": "ping",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "pong"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "content": {}
+          },
+          "500": {
+            "description": "an unexpected error has occurred",
+            "content": {}
+          }
+        },
+        "x-swagger-router-controller": "health"
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "description": "This method is use to retrieve check the version of the app",
+        "operationId": "version",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "1.0.0"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "content": {}
+          },
+          "500": {
+            "description": "an unexpected error has occurred",
+            "content": {}
+          }
+        },
+        "x-swagger-router-controller": "health"
+      }
+    }
+  }
+}
